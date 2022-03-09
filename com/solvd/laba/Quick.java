@@ -3,7 +3,7 @@ package com.solvd.laba;
 public class Quick {
 
     public static void main(String[] args) {
-        int a[] = {1, -3, 5, 6, 8, 188};
+        int[] a = {1, -3, 5, 6, 8, 188};
         int n = a.length;
         System.out.println("\nBefore sorting array elements are - ");
         Quick q1 = new Quick();
@@ -14,7 +14,7 @@ public class Quick {
         System.out.println();
     }
 
-    int partition(int a[], int start, int end) {
+    int partition(int[] a, int start, int end) {
         int pivot = a[end];
         int i = (start - 1);
 
@@ -32,7 +32,7 @@ public class Quick {
         return (i + 1);
     }
 
-    void quick(int a[], int start, int end) {
+    void quick(int[] a, int start, int end) {
         if (start < end) {
             int p = partition(a, start, end);
             quick(a, start, p - 1);
@@ -40,7 +40,7 @@ public class Quick {
         }
     }
 
-    void printArr(int a[], int n) {
+    void printArr(int[] a, int n) {
         int i;
         for (i = 0; i < n; i++)
             System.out.print(a[i] + " ");
