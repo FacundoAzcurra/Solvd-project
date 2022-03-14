@@ -1,15 +1,16 @@
 package com.solvd.laba;
 
-import java.util.Scanner;
-
 public class Encapsulation {
     public static void main(String[] args) {
 
-Plane plane = new Plane ("Boeing", "747",2022 );
+        Plane plane = new Plane("Boeing", "747", 2022, "blue", 74);
 
-plane.setYear(2022);
-plane.setMake("Boeing");
-plane.setModel("747");
+
+        plane.setMake("Boeing");
+        plane.setModel("747");
+        plane.setYear(2022);
+        plane.setColour("blue");
+        plane.setSeats(74);
 
         System.out.println("Make :");
         System.out.println(plane.getMake());
@@ -17,6 +18,11 @@ plane.setModel("747");
         System.out.println(plane.getModel());
         System.out.println("Year :");
         System.out.println(plane.getYear());
+        System.out.println("Colour :");
+        System.out.println(plane.getColour());
+        System.out.println("Seats :");
+        System.out.println(plane.getSeats());
+
 
     }
 }
