@@ -17,5 +17,6 @@ plane.setModel("747");
         System.out.println(plane.getModel());
         System.out.println("Year :");
         System.out.println(plane.getYear());
+
     }
 }
