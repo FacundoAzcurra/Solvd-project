@@ -14,10 +14,8 @@ public class SortInput {
 
         do {
             System.out.println("Select sort method.");
-            System.out.println("1-Ascending Numbers.");
-            System.out.println("2-Descending Numbers.");
-            System.out.println("3-Letters from A-Z.");
-            System.out.println("4-Letters from Z-A.");
+            System.out.println("1-Ascending Numbers.//2.Descending Numbers");
+            System.out.println("3-Letters from A-Z.//4-Letters from Z-A.");
             System.out.println("5-Close program.");
             array = sc.nextInt();
 
@@ -38,7 +36,6 @@ public class SortInput {
                     System.out.println("Goodbye!");
                     array = 0;
                     break;
-
                 default:
                     System.out.println("Not a valid option.");
             }
