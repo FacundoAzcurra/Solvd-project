@@ -1,7 +1,6 @@
 package com.solvd.laba.sorts;
 
 public class SortMethods {
-    // ascending order
     public int[] SortingAsc(int[] arr) {
         int n = arr.length;
         for (int j = 0; j < n - 1; j++) {
