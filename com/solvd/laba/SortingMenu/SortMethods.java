@@ -1,4 +1,4 @@
-package com.solvd.laba.sorts;
+package com.solvd.laba.SortingMenu;
 
 public class SortMethods {
     public int[] SortingAsc(int[] arr) {

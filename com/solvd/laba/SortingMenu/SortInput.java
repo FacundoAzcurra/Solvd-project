@@ -1,4 +1,4 @@
-package com.solvd.laba.sorts;
+package com.solvd.laba.SortingMenu;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -42,6 +42,7 @@ public class SortInput {
                 default:
                     System.out.println("Not a valid option.");
             }
+            System.out.println(" ");
             System.out.println(" ");
         } while (array != 0);
     }
