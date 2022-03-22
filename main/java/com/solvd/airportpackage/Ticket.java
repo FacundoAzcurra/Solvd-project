@@ -1,4 +1,4 @@
-package com.solvd.laba.airportpackage;
+package com.solvd.airportpackage;
 
 public class Ticket {
 

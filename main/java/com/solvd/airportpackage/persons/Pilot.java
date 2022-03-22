@@ -1,4 +1,4 @@
-package com.solvd.laba.airportpackage.persons;
+package com.solvd.airportpackage.persons;
 
 public class Pilot extends Employee {
     private int pilotLicense;

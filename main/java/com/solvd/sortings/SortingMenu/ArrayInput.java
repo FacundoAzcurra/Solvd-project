@@ -1,4 +1,4 @@
-package com.solvd.laba.SortingMenu;
+package com.solvd.sortings.SortingMenu;
 
 import java.util.Scanner;
 

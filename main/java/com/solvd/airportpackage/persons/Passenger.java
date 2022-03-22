@@ -1,6 +1,6 @@
-package com.solvd.laba.airportpackage.persons;
+package com.solvd.airportpackage.persons;
 
-import com.solvd.laba.airportpackage.Ticket;
+import com.solvd.airportpackage.Ticket;
 
 public class Passenger extends Person {
     private Ticket ticket;

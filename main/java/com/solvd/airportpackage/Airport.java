@@ -1,8 +1,7 @@
-package com.solvd.laba.airportpackage;
+package com.solvd.airportpackage;
 
-
-import com.solvd.laba.airportpackage.persons.Passenger;
-import com.solvd.laba.airportpackage.persons.SalesPerson;
+import com.solvd.airportpackage.persons.Passenger;
+import com.solvd.airportpackage.persons.SalesPerson;
 
 import java.util.Scanner;
 
