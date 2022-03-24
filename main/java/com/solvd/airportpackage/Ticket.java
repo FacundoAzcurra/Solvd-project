@@ -47,7 +47,7 @@ public class Ticket {
     }
 
     /*0.08 USD PER KM*/
-    public float getTicketPrice() {
+    public float getTicketPrice(){
         return (float) (flightDistance * 0.08);
     }
 

@@ -21,17 +21,14 @@ public class Airport {
         Scanner sccity = new Scanner(System.in);
         System.out.println("Enter the name of the city you want to travel.");
         destination.setName(sccity.nextLine());
-        System.out.println("Enter the distance from Buenos Aires to destination.");
+        System.out.println("Enter the distance from Buenos Aires to destination in kilometers.");
         Scanner scdistance = new Scanner(System.in);
         destination.setDistanceFromBuenosAires(scdistance.nextInt());
 
         Ticket ticket1 = new Ticket(100, 1, destination.getDistanceFromBuenosAires());
         SalesPerson salesPerson = new SalesPerson(10, "Men", 151512, "Tutuca", 15, 220, "Aerolineas Argentinas");
         //System.out.println(ticket1.getTicketPrice()); /* Calculate the price of the ticket based in the distance from Buenos Aires*/
-
         System.out.println("Price of your flight:");
         System.out.println(ticket1.getTicketPrice());
     }
 }
-
-

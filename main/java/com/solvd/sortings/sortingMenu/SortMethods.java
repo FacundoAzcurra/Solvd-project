@@ -1,4 +1,4 @@
-package com.solvd.sortings.SortingMenu;
+package com.solvd.sortings.sortingMenu;
 
 public class SortMethods {
     public int[] SortingAsc(int[] arr) {
