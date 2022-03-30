@@ -1,6 +1,8 @@
 package com.solvd.airportpackage;
 
-public class Ticket {
+import com.solvd.airportpackage.exceptions.IncorrectKilometersException;
+
+public class Ticket<flightDistance> {
 
     private int ticketNumber;
     private int ticketDocument;
@@ -47,9 +49,11 @@ public class Ticket {
     }
 
     /*0.08 USD PER KM*/
-    public float getTicketPrice(){
+    public float getTicketPrice() throws IncorrectKilometersException {
+        if (flightDistance<=0) throw new IncorrectKilometersException();
         return (float) (flightDistance * 0.08);
-    }
+
+}
 
 
 }

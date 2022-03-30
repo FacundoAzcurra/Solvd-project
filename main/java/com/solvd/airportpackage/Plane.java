@@ -1,10 +1,16 @@
 package com.solvd.airportpackage;
 
-public class Plane {
+import com.solvd.airportpackage.exceptions.PassengerNotFoundException;
+import com.solvd.airportpackage.persons.Passenger;
+
+import java.util.ArrayList;
+
+public class Plane{
     private int idNumber;
     private String make;
     private String model;
     private int year;
+    private ArrayList<Passenger> passengers;
 
 
     public Plane(int idNumber, String make, String model, int year) {
@@ -12,7 +18,10 @@ public class Plane {
         this.make = make;
         this.model = model;
         this.year = year;
+        this.passengers = new ArrayList<>();
+
     }
+
 
     public int getIdNumber() {
         return idNumber;
@@ -45,6 +54,37 @@ public class Plane {
     public void setYear(int year) {
         this.year = year;
     }
+
+    public ArrayList<Passenger> getPassengers() {
+        return passengers;
+    }
+
+    public void setPassengers(ArrayList<Passenger> passengers) {
+        this.passengers = passengers;
+    }
+
+    public void addPassenger(Passenger addedPassenger){
+        passengers.add(addedPassenger);
+    }
+public void printArray()
+    {
+        for (int i = 0; i < passengers.size(); i++){
+            System.out.println(passengers.get(i));
+        }
+
+    }
+    public Passenger getPassenger(int document,ArrayList<Passenger> passengers) throws PassengerNotFoundException {
+        Passenger passenger = null;
+
+        for(int i = 0 ; i < passengers.size(); i++){
+            if (passengers.get(i).getDocument()==document){
+                passenger=passengers.get(i);
+            }
+        }
+        if (passenger == null) throw new PassengerNotFoundException();
+       return passenger;
+    }
+
 
 
     @Override

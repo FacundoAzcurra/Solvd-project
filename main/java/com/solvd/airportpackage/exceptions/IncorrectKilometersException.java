@@ -1,6 +1,10 @@
 package com.solvd.airportpackage.exceptions;
 
-public class IncorrectKilometersException extends Exception{
-    public IncorrectKilometersException() {
+import java.util.InputMismatchException;
+
+public class IncorrectKilometersException extends InputMismatchException {
+    public IncorrectKilometersException()
+    {
+        super("Enter a value in kilometers greater than 0!");
     }
 }
