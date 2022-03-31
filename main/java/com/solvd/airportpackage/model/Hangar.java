@@ -1,4 +1,4 @@
-package com.solvd.airportpackage;
+package java.com.solvd.airportpackage.model;
 
 public class Hangar {
     private boolean isFull;

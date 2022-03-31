@@ -1,4 +1,4 @@
-package java.com.solvd.airportpackage.exception;
+package java.com.solvd.airportpackage.model.exception;
 
 import java.util.InputMismatchException;
 

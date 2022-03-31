@@ -1,4 +1,4 @@
-package java.com.solvd.airportpackage;
+package java.com.solvd.airportpackage.model;
 
 public class Destination {
     private String name;

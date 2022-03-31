@@ -1,6 +1,6 @@
-package java.com.solvd.airportpackage.person;
+package java.com.solvd.airportpackage.model.person;
 
-import java.com.solvd.airportpackage.Ticket;
+import java.com.solvd.airportpackage.model.Ticket;
 
 public class Passenger extends Person {
     private Ticket ticket;

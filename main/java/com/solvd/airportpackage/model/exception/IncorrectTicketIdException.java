@@ -1,4 +1,4 @@
-package java.com.solvd.airportpackage.exception;
+package java.com.solvd.airportpackage.model.exception;
 
 public class IncorrectTicketIdException extends RuntimeException {
     public IncorrectTicketIdException(String errorMessage) {
