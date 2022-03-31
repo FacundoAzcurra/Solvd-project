@@ -1,4 +1,4 @@
-package com.solvd.airportpackage;
+package java.com.solvd.airportpackage;
 
 public class Flight {
     private String flightId;

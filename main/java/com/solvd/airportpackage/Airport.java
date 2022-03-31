@@ -1,13 +1,13 @@
-package com.solvd.airportpackage;
+package java.com.solvd.airportpackage;
 
-import com.solvd.airportpackage.exceptions.IncorrectKilometersException;
-import com.solvd.airportpackage.exceptions.NotANumberException;
-import com.solvd.airportpackage.exceptions.PassengerNotFoundException;
-import com.solvd.airportpackage.persons.Passenger;
 import com.solvd.airportpackage.persons.SalesPerson;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.com.solvd.airportpackage.exception.IncorrectKilometersException;
+import java.com.solvd.airportpackage.exception.NotANumberException;
+import java.com.solvd.airportpackage.exception.PassengerNotFoundException;
+import java.com.solvd.airportpackage.person.Passenger;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 

@@ -1,7 +1,7 @@
-package com.solvd.airportpackage;
+package java.com.solvd.airportpackage;
 
-import com.solvd.airportpackage.exceptions.PassengerNotFoundException;
-import com.solvd.airportpackage.persons.Passenger;
+import java.com.solvd.airportpackage.exception.PassengerNotFoundException;
+import java.com.solvd.airportpackage.person.Passenger;
 
 import java.util.ArrayList;
 
