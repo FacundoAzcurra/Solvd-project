@@ -1,4 +1,4 @@
-package com.solvd.airportpackage.model1.person;
+package com.solvd.airportpackage.model.person;
 
 public abstract class Person {
     private int age;

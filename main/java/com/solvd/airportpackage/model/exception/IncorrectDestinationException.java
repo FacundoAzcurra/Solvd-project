@@ -1,4 +1,4 @@
-package com.solvd.airportpackage.model1.exception;
+package com.solvd.airportpackage.model.exception;
 
 public class IncorrectDestinationException extends RuntimeException {
     public IncorrectDestinationException(String errorMessage) {

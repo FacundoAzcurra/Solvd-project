@@ -1,10 +1,12 @@
-package com.solvd.airportpackage.model1;
+package com.solvd.airportpackage.model;
 
-import com.solvd.airportpackage.model1.exception.PassengerNotFoundException;
-import com.solvd.airportpackage.model1.person.Passenger;
+import com.solvd.airportpackage.model.exception.PassengerNotFoundException;
+import com.solvd.airportpackage.model.person.Employee;
+import com.solvd.airportpackage.model.person.Passenger;
 import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 
 public class Plane {
@@ -14,6 +16,7 @@ public class Plane {
     private String model;
     private int year;
     private ArrayList<Passenger> passengers;
+    private LinkedList<Employee> onboardCrew;
 
 
     public Plane(int idNumber, String make, String model, int year) {
@@ -22,6 +25,7 @@ public class Plane {
         this.model = model;
         this.year = year;
         this.passengers = new ArrayList<>();
+        this.onboardCrew = new LinkedList<>();
 
     }
 
@@ -40,6 +44,14 @@ public class Plane {
 
     public void setMake(String make) {
         this.make = make;
+    }
+
+    public LinkedList<Employee> getOnboardCrew() {
+        return onboardCrew;
+    }
+
+    public void setOnboardCrew(LinkedList<Employee> onboardCrew) {
+        this.onboardCrew = onboardCrew;
     }
 
     public String getModel() {
@@ -67,7 +79,11 @@ public class Plane {
     }
 
     public void addPassenger(Passenger addedPassenger) {
-        passengers.add(addedPassenger);
+        this.passengers.add(addedPassenger);
+    }
+
+    public void addOnboardCrew(Employee addedOnboardCrew) {
+        this.onboardCrew.add(addedOnboardCrew);
     }
 
     public void printArray() {
@@ -77,12 +93,12 @@ public class Plane {
 
     }
 
-    public Passenger getPassenger(int document, ArrayList<Passenger> passengers) throws PassengerNotFoundException {
+    public Passenger getPassenger(int document) throws PassengerNotFoundException {
         Passenger passenger = null;
 
-        for (int i = 0; i < passengers.size(); i++) {
-            if (passengers.get(i).getDocument() == document) {
-                passenger = passengers.get(i);
+        for (int i = 0; i < this.passengers.size(); i++) {
+            if (this.passengers.get(i).getDocument() == document) {
+                passenger = this.passengers.get(i);
             }
         }
         if (passenger == null) throw new PassengerNotFoundException();
@@ -95,7 +111,7 @@ public class Plane {
         return "Plane{" +
                 "idNumber=" + idNumber +
                 ", make='" + make + '\'' +
-                ", model1='" + model + '\'' +
+                ", model='" + model + '\'' +
                 ", year=" + year +
                 '}';
     }

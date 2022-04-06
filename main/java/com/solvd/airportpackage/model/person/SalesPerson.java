@@ -1,7 +1,7 @@
-package com.solvd.airportpackage.model1.person;
+package com.solvd.airportpackage.model.person;
 
 
-import com.solvd.airportpackage.model1.interface1.ISell;
+import com.solvd.airportpackage.model.interface1.ISell;
 
 public class SalesPerson extends Employee implements ISell {
     private String airline;
@@ -31,7 +31,7 @@ public class SalesPerson extends Employee implements ISell {
     }
 
 
-    public void sell(int soldTickets){
+    public void sell(int soldTickets) {
 
 
     }

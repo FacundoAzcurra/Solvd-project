@@ -1,16 +1,17 @@
 package com.solvd.airportpackage.util;
 
+import com.solvd.airportpackage.model.Destination;
+import com.solvd.airportpackage.model.Flight;
+import com.solvd.airportpackage.model.Plane;
+import com.solvd.airportpackage.model.Ticket;
+import com.solvd.airportpackage.model.exception.IncorrectKilometersException;
+import com.solvd.airportpackage.model.exception.NotANumberException;
+import com.solvd.airportpackage.model.exception.PassengerNotFoundException;
+import com.solvd.airportpackage.model.generic.CompareObjectField;
+import com.solvd.airportpackage.model.person.Passenger;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import com.solvd.airportpackage.model1.Plane;
-import com.solvd.airportpackage.model1.exception.IncorrectKilometersException;
 
-import com.solvd.airportpackage.model1.Destination;
-import com.solvd.airportpackage.model1.Flight;
-import com.solvd.airportpackage.model1.Ticket;
-import com.solvd.airportpackage.model1.exception.NotANumberException;
-import com.solvd.airportpackage.model1.exception.PassengerNotFoundException;
-import com.solvd.airportpackage.model1.person.Passenger;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -57,11 +58,15 @@ public class Airport {
             throw new NotANumberException(e);
         }
         try {
-            LOGGER.info(plane1.getPassenger(124578, plane1.getPassengers()));
+            LOGGER.info(plane1.getPassenger(124578));
         } catch (PassengerNotFoundException e) {
             LOGGER.info(e);
         }
+        CompareObjectField comparador = new CompareObjectField();
+        comparador.compareField(passenger1,passenger2,"name");
+        }
     }
-}
+
+
 
 

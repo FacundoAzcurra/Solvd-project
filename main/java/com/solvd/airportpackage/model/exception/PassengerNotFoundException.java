@@ -1,4 +1,4 @@
-package com.solvd.airportpackage.model1.exception;
+package com.solvd.airportpackage.model.exception;
 
 public class PassengerNotFoundException extends NullPointerException {
     public PassengerNotFoundException() {

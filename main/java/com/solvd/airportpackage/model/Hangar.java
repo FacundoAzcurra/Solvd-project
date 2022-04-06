@@ -1,8 +1,11 @@
-package com.solvd.airportpackage.model1;
+package com.solvd.airportpackage.model;
+
+import java.util.Set;
 
 public class Hangar {
     private boolean isFull;
     private int numberOfPlanes;
+    private Set<Plane> planesSet;
 
     public Hangar() {
     }
@@ -27,6 +30,22 @@ public class Hangar {
     public void setNumberOfPlanes(int numberOfPlanes) {
         this.numberOfPlanes = numberOfPlanes;
     }
+
+    public Set<Plane> getPlanesSet() {
+        return planesSet;
+    }
+
+    public void setPlanesSet(Set<Plane> planesSet) {
+        this.planesSet = planesSet;
+    }
+
+    public void addPlane(Plane plane) {
+        if (isFull == false) {
+            this.planesSet.add(plane);
+            this.numberOfPlanes++;
+        }
+    }
+
 
     @Override
     public String toString() {
