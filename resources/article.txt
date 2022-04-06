@@ -1,0 +1,24 @@
+F1 Delta Time, an official NFT and crypto-powered racing game that launched back in 2019, closed its doors last month. This leaves everyone who had spent money and invested in the project probably wishing they had done something else with their time.
+
+The game—which was one of the first licensed NFT titles out there, years before other leagues and sports got into the scam—announced its closure on March 15, giving users...one day before the game shut down on March 16. If you’ve never seen F1 Delta Time before, and you’re thinking, “Wow, did I miss an exciting Formula 1 racing game?!?!”, you did not:
+
+Games shut down all the time, but what’s notable about this one is that it was at one point a pretty big deal, at least in this cursed space! Example: the most expensive NFT sold in all of 2019 was a car for this game, which went for over $100,000. Add a combination of the official F1 license and a promised ability for players to “play to earn”, and you had an early test case for how NFT-powered games could work.
+
+With owners Animoca unable to renew the F1 license, however, it is now also a test case for what happens when a licensed NFT game dies. All that money splashed out on cars and other items—some players would later spend almost $300,000 on a single transaction—is now ostensibly worthless. Sure, the tokens themselves live on, but without the game they were bought for there’s no actual value there.
+
+Fully aware of this, the developers have promised the owners of those F1 NFTs that they can now have some generic replacement tokens for an entirely different racing game instead:
+
+As part of our commitment to an open ecosystem, we are providing F1® Delta Time asset owners with the following options:
+
+- All F1® Delta Time car owners will receive Replacement Cars, which are equivalent cars for REVV Racing on Polygon based on the rarity and power of your original F1® Delta Time cars
+
+- Your F1® Delta Time cars can be swapped for a Race Pass, which is used in staking and gives access to future NFT mints and airdrops
+
+- Staking v4.0 will have our largest reward pool yet: 20 million REVV. To participate you will need to use your new REVV Racing assets together with a Race Pass. Future staking events to be announced.
+
+-Event Segment owners receive 6 months of rewards, and an option to swap for Track Vouchers, redeemable for a REVV Motorsport track NFT in the future
+
+- 2019 Crates and 2020 Keys can be bridged and staked into a SHRD earning pool on Polygon
+
+- All other F1® Delta Time assets can be swapped for Proxy Assets, which will be used in the future to obtain NFTs for products across the REVV Motorsport ecosystem
+
