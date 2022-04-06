@@ -1,6 +1,6 @@
-package java.com.solvd.airportpackage.model;
+package com.solvd.airportpackage.model1;
 
-import java.com.solvd.airportpackage.model.exception.IncorrectKilometersException;
+import com.solvd.airportpackage.model1.exception.IncorrectKilometersException;
 
 public class Ticket<flightDistance> {
 
@@ -50,10 +50,10 @@ public class Ticket<flightDistance> {
 
     /*0.08 USD PER KM*/
     public float getTicketPrice() throws IncorrectKilometersException {
-        if (flightDistance<=0) throw new IncorrectKilometersException();
+        if (flightDistance <= 0) throw new IncorrectKilometersException();
         return (float) (flightDistance * 0.08);
 
-}
+    }
 
 
 }

@@ -1,6 +1,9 @@
-package com.solvd.airportpackage.persons;
+package com.solvd.airportpackage.model1.person;
 
-public class SalesPerson extends Employee {
+
+import com.solvd.airportpackage.model1.interface1.ISell;
+
+public class SalesPerson extends Employee implements ISell {
     private String airline;
 
     public SalesPerson(int age, String sex, int document, String name, int employeeId, double wage) {
@@ -20,11 +23,16 @@ public class SalesPerson extends Employee {
         airline = airline;
     }
 
-
     @Override
     public String toString() {
         return "SalesPerson{" +
                 "airline='" + airline + '\'' +
                 "} " + super.toString();
+    }
+
+
+    public void sell(int soldTickets){
+
+
     }
 }

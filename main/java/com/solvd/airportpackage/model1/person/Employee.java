@@ -1,4 +1,4 @@
-package com.solvd.airportpackage.persons;
+package com.solvd.airportpackage.model1.person;
 
 public abstract class Employee extends Person {
     private int employeeId;

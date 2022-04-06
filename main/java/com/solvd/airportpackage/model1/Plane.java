@@ -1,11 +1,14 @@
-package java.com.solvd.airportpackage.model;
+package com.solvd.airportpackage.model1;
 
-import java.com.solvd.airportpackage.model.exception.PassengerNotFoundException;
-import java.com.solvd.airportpackage.model.person.Passenger;
+import com.solvd.airportpackage.model1.exception.PassengerNotFoundException;
+import com.solvd.airportpackage.model1.person.Passenger;
+import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
 
-public class Plane{
+
+public class Plane {
+    public static Logger LOGGER = org.apache.log4j.LogManager.getLogger(Plane.class);
     private int idNumber;
     private String make;
     private String model;
@@ -63,28 +66,28 @@ public class Plane{
         this.passengers = passengers;
     }
 
-    public void addPassenger(Passenger addedPassenger){
+    public void addPassenger(Passenger addedPassenger) {
         passengers.add(addedPassenger);
     }
-public void printArray()
-    {
-        for (int i = 0; i < passengers.size(); i++){
-            System.out.println(passengers.get(i));
+
+    public void printArray() {
+        for (int i = 0; i < passengers.size(); i++) {
+            LOGGER.info(passengers.get(i));
         }
 
     }
-    public Passenger getPassenger(int document,ArrayList<Passenger> passengers) throws PassengerNotFoundException {
+
+    public Passenger getPassenger(int document, ArrayList<Passenger> passengers) throws PassengerNotFoundException {
         Passenger passenger = null;
 
-        for(int i = 0 ; i < passengers.size(); i++){
-            if (passengers.get(i).getDocument()==document){
-                passenger=passengers.get(i);
+        for (int i = 0; i < passengers.size(); i++) {
+            if (passengers.get(i).getDocument() == document) {
+                passenger = passengers.get(i);
             }
         }
         if (passenger == null) throw new PassengerNotFoundException();
-       return passenger;
+        return passenger;
     }
-
 
 
     @Override
@@ -92,7 +95,7 @@ public void printArray()
         return "Plane{" +
                 "idNumber=" + idNumber +
                 ", make='" + make + '\'' +
-                ", model='" + model + '\'' +
+                ", model1='" + model + '\'' +
                 ", year=" + year +
                 '}';
     }

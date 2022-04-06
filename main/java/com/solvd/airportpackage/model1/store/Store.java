@@ -1,4 +1,4 @@
-package com.solvd.airportpackage.stores;
+package com.solvd.airportpackage.model1.store;
 
 public class Store {
     private int id;
