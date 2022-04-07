@@ -1,6 +1,6 @@
 package com.solvd.airportpackage.model.person;
 
-public abstract class Person {
+public class Person {
     private int age;
     private String sex;
     private int id;
