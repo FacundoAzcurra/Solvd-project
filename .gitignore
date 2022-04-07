@@ -4,3 +4,5 @@ com/solvd/laba/HelloWorld.class
 out/
 *.iml
 .class
+.gitattributes
+target
