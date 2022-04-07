@@ -12,12 +12,7 @@ public class ArticleSort {
 
         File article = new File("D:\\SOLVD JAVA\\SOLVD1\\src\\resources\\article.txt");
         FileUtils.write(new File("D:\\SOLVD JAVA\\SOLVD1\\src\\resources\\sortedArticle.txt"),parser(article),"UTF-8");
-
-
     }
-
-
-
     private static String parser(File file) throws IOException {
         Map<String, Integer> sortedWords = new HashMap<>();
         String text = FileUtils.readFileToString(file,"UTF-8").toLowerCase();
@@ -25,10 +20,6 @@ public class ArticleSort {
             if (sortedWords.containsKey(word)) sortedWords.replace(word,sortedWords.get(word) + 1);
             else sortedWords.put(word , 1);
         });
-
         return sortedWords.toString();
-
-
-
     }
 }

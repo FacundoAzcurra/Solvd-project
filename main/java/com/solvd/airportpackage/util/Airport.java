@@ -63,9 +63,9 @@ public class Airport {
             LOGGER.info(e);
         }
         CompareObjectField comparador = new CompareObjectField();
-        comparador.compareField(passenger1,passenger2,"name");
-        }
+        comparador.compareField(passenger1, passenger2, "name");
     }
+}
 
 
 
