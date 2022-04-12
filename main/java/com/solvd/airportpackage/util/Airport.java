@@ -18,7 +18,7 @@ import java.util.Scanner;
 public class Airport {
     public static Logger LOGGER = LogManager.getLogger(Airport.class);
 
-    public static void main(String[] args) throws PassengerNotFoundException {
+    public static void main(String[] args) throws PassengerNotFoundException, NotANumberException {
 
         Passenger passenger1 = new Passenger(20, "Male", 1578475, "Facundo Azcurra");
         Passenger passenger2 = new Passenger(22, "Female", 124578, "Lilita Carrio");
@@ -63,9 +63,9 @@ public class Airport {
             LOGGER.info(e);
         }
         CompareObjectField comparador = new CompareObjectField();
-        comparador.compareField(passenger1, passenger2, "name");
+        comparador.compareField(passenger1,passenger2,"name");
+        }
     }
-}
 
 
 
