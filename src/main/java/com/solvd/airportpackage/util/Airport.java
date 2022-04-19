@@ -32,10 +32,12 @@ public class Airport {
         LOGGER.info("Hello " + passenger1.getName());
 
         Plane plane1 = new Plane(1, "boeing", "tutuca", 2020);
+        LOGGER.info("Plane 1 Passengers: ");
         plane1.addPassenger(passenger1);
         plane1.addPassenger(passenger2);
         plane1.addPassenger(passenger3);
         plane1.addPassenger(passenger4);
+        plane1.getPassengers().stream().forEach(LOGGER::info);
         Destination destination = new Destination("Belarus", true, 10, "Europe", 12807);
         Flight flight1 = new Flight("AR1", destination, "22:15-3/16/22");
 
@@ -62,11 +64,7 @@ public class Airport {
         } catch (PassengerNotFoundException e) {
             LOGGER.info(e);
         }
-        CompareObjectField comparador = new CompareObjectField();
-        comparador.compareField(passenger1,passenger2,"name");
+        CompareObjectField comparator = new CompareObjectField();
+        comparator.compareField(passenger1,passenger2,"name");
         }
     }
-
-
-
-
