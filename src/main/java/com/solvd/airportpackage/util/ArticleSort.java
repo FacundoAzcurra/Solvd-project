@@ -1,3 +1,5 @@
+package com.solvd.airportpackage.util;
+
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringUtils;
 
@@ -10,8 +12,8 @@ import java.util.Map;
 public class ArticleSort {
     public static void main(String[] args) throws IOException {
 
-        File article = new File("D:\\SOLVD JAVA\\SOLVD1\\src\\resources\\article.txt");
-        FileUtils.write(new File("D:\\SOLVD JAVA\\SOLVD1\\src\\resources\\sortedArticle.txt"), parser(article), "UTF-8");
+        File article = new File("src/main/resources/article.txt");
+        FileUtils.write(new File("src/main/resources/sortedArticle.txt"), parser(article), "UTF-8");
     }
 
     private static String parser(File file) throws IOException {

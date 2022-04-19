@@ -1,6 +1,6 @@
-package main.java.com.solvd.airportpackage.model.person;
+package com.solvd.airportpackage.model.person;
 
-public class Employee extends main.java.com.solvd.airportpackage.model.person.Person {
+public class Employee extends Person {
     private int employeeId;
     private double wage;
 

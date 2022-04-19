@@ -1,8 +1,8 @@
-package main.java.com.solvd.airportpackage.model.exception;
+package com.solvd.airportpackage.model.exception;
 
 import java.util.InputMismatchException;
 
-public class NotANumberException extends Exception {
+public class NotANumberException extends RuntimeException {
     public NotANumberException(InputMismatchException e) {
         super("Enter a valid kilometer in numbers!");
     }

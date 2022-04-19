@@ -1,4 +1,4 @@
-package main.java.com.solvd.airportpackage.model.generic;
+package com.solvd.airportpackage.model.generic;
 
 import java.lang.reflect.Field;
 

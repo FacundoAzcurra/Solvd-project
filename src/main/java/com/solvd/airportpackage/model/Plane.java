@@ -1,8 +1,8 @@
-package main.java.com.solvd.airportpackage.model;
+package com.solvd.airportpackage.model;
 
-import main.java.com.solvd.airportpackage.model.exception.PassengerNotFoundException;
-import main.java.com.solvd.airportpackage.model.person.Employee;
-import main.java.com.solvd.airportpackage.model.person.Passenger;
+import com.solvd.airportpackage.model.exception.PassengerNotFoundException;
+import com.solvd.airportpackage.model.person.Employee;
+import com.solvd.airportpackage.model.person.Passenger;
 import org.apache.log4j.Logger;
 
 import java.util.ArrayList;

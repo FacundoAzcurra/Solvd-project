@@ -1,6 +1,6 @@
-package main.java.com.solvd.airportpackage.model.person;
+package com.solvd.airportpackage.model.person;
 
-public class AirportPolice extends main.java.com.solvd.airportpackage.model.person.Employee {
+public class AirportPolice extends Employee {
     private boolean isArmed;
     private int migrationOfficeNumber;
 

@@ -1,6 +1,6 @@
-package main.java.com.solvd.airportpackage.model;
+package com.solvd.airportpackage.model;
 
-import main.java.com.solvd.airportpackage.model.exception.IncorrectKilometersException;
+import com.solvd.airportpackage.model.exception.IncorrectKilometersException;
 
 public class Ticket<flightDistance> {
 

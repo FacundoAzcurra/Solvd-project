@@ -1,6 +1,6 @@
-package main.java.com.solvd.airportpackage.model.person;
+package com.solvd.airportpackage.model.person;
 
-public class BaggageHandler extends main.java.com.solvd.airportpackage.model.person.Employee {
+public class BaggageHandler extends Employee {
     private boolean isDriver;
 
     public BaggageHandler(int age, String sex, int document, String name, int employeeId, double wage) {

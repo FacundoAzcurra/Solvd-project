@@ -1,9 +1,9 @@
-package main.java.com.solvd.airportpackage.model.person;
+package com.solvd.airportpackage.model.person;
 
 
-import main.java.com.solvd.airportpackage.model.interface1.ISell;
+import com.solvd.airportpackage.model.interface1.ISell;
 
-public class SalesPerson extends main.java.com.solvd.airportpackage.model.person.Employee implements ISell {
+public class SalesPerson extends Employee implements ISell {
     private String airline;
 
     public SalesPerson(int age, String sex, int document, String name, int employeeId, double wage) {

@@ -1,8 +1,8 @@
-package main.java.com.solvd.airportpackage.model.person;
+package com.solvd.airportpackage.model.person;
 
 import java.util.Arrays;
 
-public class FlightAttendant extends main.java.com.solvd.airportpackage.model.person.Employee {
+public class FlightAttendant extends Employee {
     private boolean hasPCRTraining;
     private String[] languages;
 

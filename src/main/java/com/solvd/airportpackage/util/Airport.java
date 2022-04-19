@@ -1,14 +1,15 @@
-package main.java.com.solvd.airportpackage.util;
+package com.solvd.airportpackage.util;
 
-import main.java.com.solvd.airportpackage.model.Destination;
-import main.java.com.solvd.airportpackage.model.Flight;
-import main.java.com.solvd.airportpackage.model.Plane;
-import main.java.com.solvd.airportpackage.model.Ticket;
-import main.java.com.solvd.airportpackage.model.exception.IncorrectKilometersException;
-import main.java.com.solvd.airportpackage.model.exception.NotANumberException;
-import main.java.com.solvd.airportpackage.model.exception.PassengerNotFoundException;
-import main.java.com.solvd.airportpackage.model.generic.CompareObjectField;
-import main.java.com.solvd.airportpackage.model.person.Passenger;
+import com.solvd.airportpackage.model.Destination;
+import com.solvd.airportpackage.model.Flight;
+import com.solvd.airportpackage.model.Plane;
+import com.solvd.airportpackage.model.Ticket;
+import com.solvd.airportpackage.model.constant.AirportLocation;
+import com.solvd.airportpackage.model.exception.IncorrectKilometersException;
+import com.solvd.airportpackage.model.exception.NotANumberException;
+import com.solvd.airportpackage.model.exception.PassengerNotFoundException;
+import com.solvd.airportpackage.model.generic.CompareObjectField;
+import com.solvd.airportpackage.model.person.Passenger;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -37,6 +38,7 @@ public class Airport {
         plane1.addPassenger(passenger2);
         plane1.addPassenger(passenger3);
         plane1.addPassenger(passenger4);
+        //stream printer of arraylist.
         plane1.getPassengers().stream().forEach(LOGGER::info);
         Destination destination = new Destination("Belarus", true, 10, "Europe", 12807);
         Flight flight1 = new Flight("AR1", destination, "22:15-3/16/22");
