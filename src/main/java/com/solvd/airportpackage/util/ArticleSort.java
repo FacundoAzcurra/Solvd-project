@@ -23,6 +23,12 @@ public class ArticleSort {
             if (sortedWords.containsKey(word)) sortedWords.replace(word, sortedWords.get(word) + 1);
             else sortedWords.put(word, 1);
         });
-        return sortedWords.toString();
+        text = "";
+        for (Map.Entry<String, Integer> entry : sortedWords.entrySet()) {
+            String word = entry.getKey();
+            Integer number = entry.getValue();
+            text = text + word + "-" + number + "\n";
+        }
+        return text;
     }
 }

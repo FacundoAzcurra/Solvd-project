@@ -4,7 +4,6 @@ import com.solvd.airportpackage.model.Destination;
 import com.solvd.airportpackage.model.Flight;
 import com.solvd.airportpackage.model.Plane;
 import com.solvd.airportpackage.model.Ticket;
-import com.solvd.airportpackage.model.constant.AirportLocation;
 import com.solvd.airportpackage.model.exception.IncorrectKilometersException;
 import com.solvd.airportpackage.model.exception.NotANumberException;
 import com.solvd.airportpackage.model.exception.PassengerNotFoundException;
@@ -52,6 +51,8 @@ public class Airport {
 
         Ticket ticket1 = new Ticket(100, 1, destination.getDistanceFromBuenosAires());
         //LOGGER.info(ticket1.getTicketPrice()); /* Calculate the price of the ticket based in the distance from Buenos Aires*/
+        Plane plane2 = new Plane(2, "Boeing", "747", 2022);
+        LOGGER.info(plane2.getMake());
 
         LOGGER.info("Price of your flight:");
         try {
@@ -67,6 +68,6 @@ public class Airport {
             LOGGER.info(e);
         }
         CompareObjectField comparator = new CompareObjectField();
-        comparator.compareField(passenger1,passenger2,"name");
-        }
+        comparator.compareField(passenger1, passenger2, "name");
     }
+}
