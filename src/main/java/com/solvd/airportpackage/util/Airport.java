@@ -4,15 +4,19 @@ import com.solvd.airportpackage.model.Destination;
 import com.solvd.airportpackage.model.Flight;
 import com.solvd.airportpackage.model.Plane;
 import com.solvd.airportpackage.model.Ticket;
+import com.solvd.airportpackage.model.constant.PlaneColors;
 import com.solvd.airportpackage.model.exception.IncorrectKilometersException;
 import com.solvd.airportpackage.model.exception.NotANumberException;
 import com.solvd.airportpackage.model.exception.PassengerNotFoundException;
 import com.solvd.airportpackage.model.generic.CompareObjectField;
+import com.solvd.airportpackage.model.interface1.ITicketable;
+import com.solvd.airportpackage.model.person.FlightAttendant;
 import com.solvd.airportpackage.model.person.Passenger;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.InputMismatchException;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Airport {
@@ -30,15 +34,22 @@ public class Airport {
         passenger1.setName(scPassengerName.next());
 
         LOGGER.info("Hello " + passenger1.getName());
+        Random random = new Random();
+        Plane plane1 = new Plane(1, "boeing", "tutuca", 2020, PlaneColors.BLUE);
 
-        Plane plane1 = new Plane(1, "boeing", "tutuca", 2020);
+        /* trying to figure how to use enums
+        LOGGER.info(plane1.getColor());*/
+
         LOGGER.info("Plane 1 Passengers: ");
+
         plane1.addPassenger(passenger1);
         plane1.addPassenger(passenger2);
         plane1.addPassenger(passenger3);
         plane1.addPassenger(passenger4);
         //stream printer of arraylist.
         plane1.getPassengers().stream().forEach(LOGGER::info);
+
+
         Destination destination = new Destination("Belarus", true, 10, "Europe", 12807);
         Flight flight1 = new Flight("AR1", destination, "22:15-3/16/22");
 
@@ -49,10 +60,25 @@ public class Airport {
         Scanner scdistance = new Scanner(System.in);
         destination.setDistanceFromBuenosAires(scdistance.nextInt());
 
-        Ticket ticket1 = new Ticket(100, 1, destination.getDistanceFromBuenosAires());
         //LOGGER.info(ticket1.getTicketPrice()); /* Calculate the price of the ticket based in the distance from Buenos Aires*/
-        Plane plane2 = new Plane(2, "Boeing", "747", 2022);
-        LOGGER.info(plane2.getMake());
+
+        ITicketable createRandomTicket = () ->
+        {
+            Random random1 = new Random();
+            int Ticketid = random1.nextInt(4000);
+            int document = random1.nextInt(4000);
+            int passenger = random1.nextInt(plane1.getPassengers().size());
+            Ticket randomCreatedTicket = new Ticket(Ticketid, document, destination.getDistanceFromBuenosAires(), plane1.getPassengers().get(passenger));
+            return randomCreatedTicket;
+        };
+
+        Ticket ticket1 = createRandomTicket.createRandomTicket();
+        LOGGER.info("TICKET;" + ticket1);
+        LOGGER.info(ticket1.getOwner());
+
+        //FlightAttendant flightAttendant1 = new FlightAttendant(28,"Male",666,"Manuelito",2555,5,true, new String[]{"ESPANOL,INGLES"});
+
+        LOGGER.info(passenger1.getTicket());
 
         LOGGER.info("Price of your flight:");
         try {

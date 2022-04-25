@@ -19,7 +19,7 @@ public class ArticleSort {
     private static String parser(File file) throws IOException {
         Map<String, Integer> sortedWords = new HashMap<>();
         String text = FileUtils.readFileToString(file, "UTF-8").toLowerCase();
-        Arrays.stream(StringUtils.split(text, " .,-+ \n")).forEach((word) -> {
+        Arrays.stream(StringUtils.split(text, " ,.;:!?-_()/\"\r\n\uFEFF")).forEach((word) -> {
             if (sortedWords.containsKey(word)) sortedWords.replace(word, sortedWords.get(word) + 1);
             else sortedWords.put(word, 1);
         });

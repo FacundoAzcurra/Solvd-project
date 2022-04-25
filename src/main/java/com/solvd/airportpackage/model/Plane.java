@@ -1,5 +1,6 @@
 package com.solvd.airportpackage.model;
 
+import com.solvd.airportpackage.model.constant.PlaneColors;
 import com.solvd.airportpackage.model.exception.PassengerNotFoundException;
 import com.solvd.airportpackage.model.person.Employee;
 import com.solvd.airportpackage.model.person.Passenger;
@@ -15,12 +16,14 @@ public class Plane {
     private String make;
     private String model;
     private int year;
+    private PlaneColors color;
     private ArrayList<Passenger> passengers;
     private LinkedList<Employee> onboardCrew;
 
 
-    public Plane(int idNumber, String make, String model, int year) {
+    public Plane(int idNumber, String make, String model, int year, PlaneColors color) {
         this.idNumber = idNumber;
+        this.color = color;
         this.make = make;
         this.model = model;
         this.year = year;
@@ -29,6 +32,13 @@ public class Plane {
 
     }
 
+    public PlaneColors getColor() {
+        return color;
+    }
+
+    public void setColor(PlaneColors color) {
+        this.color = color;
+    }
 
     public int getIdNumber() {
         return idNumber;

@@ -1,8 +1,8 @@
 package com.solvd.airportpackage.model.constant;
 
 public enum PlaneColors {
-    BLUE(1), RED(2), WHITE(3);
+    BLUE("blue"), RED("red"), WHITE("white");
 
-    PlaneColors(int i) {
+    PlaneColors(String i) {
     }
 }
