@@ -5,7 +5,7 @@ public enum AirportLocation {
 
     @Override
     public String toString() {
-        return "AirportLocation{} " + super.toString();
+        return "AirportLocation " + super.toString();
     }
 
     AirportLocation(String name) {
