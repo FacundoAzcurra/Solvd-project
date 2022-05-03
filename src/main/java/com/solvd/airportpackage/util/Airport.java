@@ -68,6 +68,30 @@ public class Airport {
         destination.setDistanceFromBuenosAires(scdistance.nextInt());
 
         //LOGGER.info(ticket1.getTicketPrice()); /* Calculate the price of the ticket based in the distance from Buenos Aires*/
+        LOGGER.info("Select the desired plane colour");
+        Scanner scplanecolour = new Scanner(System.in);
+
+        LOGGER.info("--1- BLUE // 2- WHITE // 3-RED--");
+
+        int planeCol;
+        planeCol = scplanecolour.nextInt();
+
+        switch (planeCol){
+            case 1:
+                LOGGER.info("You selected blue!");
+                plane1.setColor(PlaneColors.BLUE);
+                break;
+            case 2:
+                LOGGER.info("You selected white!");
+                plane1.setColor(PlaneColors.WHITE);
+                break;
+            case 3:
+                LOGGER.info("You selected red!");
+                plane1.setColor(PlaneColors.RED);
+                break;
+            default:
+                LOGGER.info("Select an available colour");
+        }
 
         ITicketable createRandomTicket = () ->
         {
@@ -109,34 +133,5 @@ public class Airport {
         }
 
 
-        LOGGER.info("Select the application you want to run");
-        LOGGER.info("1.Compare passengers names.");
-        LOGGER.info("2.Data printer");
-        LOGGER.info("3.Object printer");
-        LOGGER.info("Select any number besides 1-3 to exit.");
-        Scanner scgenericselector = new Scanner(System.in);
-        try {
-            switch (scgenericselector.nextInt()) {
-                case 1:
-                    CompareObjectField comparator = new CompareObjectField();
-                    comparator.compareField(passenger1, passenger2, "name");
-                    break;
-                case 2:
-                    PrintDataGeneric printDataGeneric = new PrintDataGeneric();
-                    printDataGeneric.setData(ticket1);
-                    printDataGeneric.getData();
-                    break;
-                case 3:
-                    PrintObjectToString printObjectToString = new PrintObjectToString();
-                    printObjectToString.print(plane1);
-                    break;
-                default:
-                    LOGGER.info("Goodbye! :) ");
-                    break;
-            }
-
-        } finally {
-
-        }
     }
 }

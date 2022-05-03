@@ -35,7 +35,6 @@ public class CompareObjectField<U> {
             }
         }
 
-
         return false;
 
     }
