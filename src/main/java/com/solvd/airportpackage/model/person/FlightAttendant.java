@@ -1,8 +1,11 @@
 package com.solvd.airportpackage.model.person;
 
+import com.solvd.airportpackage.model.interface1.IAttend;
+import org.apache.logging.log4j.message.Message;
+
 import java.util.Arrays;
 
-public class FlightAttendant extends Employee {
+public class FlightAttendant extends Employee implements IAttend {
     private boolean hasPCRTraining;
     private String[] languages;
 
@@ -32,6 +35,9 @@ public class FlightAttendant extends Employee {
         this.languages = languages;
     }
 
+    public void attend(){
+        System.out.println("What can i help you with?");
+    }
     @Override
     public String toString() {
         return "FlightAttendant{" +

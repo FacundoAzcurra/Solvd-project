@@ -4,17 +4,13 @@ import com.solvd.airportpackage.model.Destination;
 import com.solvd.airportpackage.model.Flight;
 import com.solvd.airportpackage.model.Plane;
 import com.solvd.airportpackage.model.Ticket;
-import com.solvd.airportpackage.model.constant.AirportLocation;
 import com.solvd.airportpackage.model.constant.PlaneColors;
 import com.solvd.airportpackage.model.constant.PlaneSize;
 import com.solvd.airportpackage.model.exception.IncorrectKilometersException;
 import com.solvd.airportpackage.model.exception.NotANumberException;
 import com.solvd.airportpackage.model.exception.PassengerNotFoundException;
-import com.solvd.airportpackage.model.generic.CompareObjectField;
-import com.solvd.airportpackage.model.generic.PrintDataGeneric;
 import com.solvd.airportpackage.model.generic.PrintObjectToString;
-import com.solvd.airportpackage.model.interface1.ISell;
-import com.solvd.airportpackage.model.interface1.ITicketable;
+import com.solvd.airportpackage.model.interface1.*;
 import com.solvd.airportpackage.model.person.FlightAttendant;
 import com.solvd.airportpackage.model.person.Passenger;
 import com.solvd.airportpackage.model.person.SalesPerson;
@@ -93,6 +89,7 @@ public class Airport {
                 LOGGER.info("Select an available colour");
         }
 
+
         ITicketable createRandomTicket = () ->
         {
             Random random1 = new Random();
@@ -105,18 +102,26 @@ public class Airport {
         boolean booleanRandom = ThreadLocalRandom.current().nextBoolean();
         LOGGER.info("Plane is on time: " + booleanRandom);
 
-        SalesPerson salesMan1 = new SalesPerson(18, "Male", random.nextInt(4000000), "Juan Adalberto", random.nextInt(1000), 50, "Aerolineas Argentinas");
-        //SalesPerson class implements ISell, to sell you a random ticket id, that it will store in the buyerId
-        salesMan1.sell(random.nextInt(4000));
-        LOGGER.info(salesMan1.getAirline());
 
         Ticket ticket1 = createRandomTicket.createRandomTicket();
         LOGGER.info("TICKET;" + ticket1);
         LOGGER.info(ticket1.getOwner());
 
-        //FlightAttendant flightAttendant1 = new FlightAttendant(28,"Male",666,"Manuelito",2555,5,true, new String[]{"ESPANOL,INGLES"});
 
-        LOGGER.info(passenger1.getTicket());
+        SalesPerson salesMan1 = new SalesPerson(18, "Male", random.nextInt(4000000), "Juan Adalberto", random.nextInt(1000), 50, "Aerolineas Argentinas",random.nextInt());
+        //SalesPerson class implements ISell, to sell you a random ticket id, that it will store in the buyerId
+        salesMan1.sell(random.nextInt(4000));
+        LOGGER.info(salesMan1.getAirline());
+        salesMan1.sell(123);
+        salesMan1.seller();
+        LOGGER.info("Here is your ticket!");
+
+
+
+        FlightAttendant flightAttendant1 = new FlightAttendant(28,"Male",666,"Manuelito",2555,5,true, new String[]{"ESPANOL,INGLES"});
+        PrintObjectToString printer = new PrintObjectToString();
+        printer.print(flightAttendant1.toString());
+        flightAttendant1.attend();
 
         LOGGER.info("Price of your flight:");
         try {
@@ -132,6 +137,10 @@ public class Airport {
             LOGGER.info(e);
         }
 
-
+        IFly flyable = () ->{
+            LOGGER.info("Plane take off starting...");
+            plane1.toString();
+        };
+        flyable.fly();
     }
 }
