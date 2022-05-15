@@ -9,8 +9,12 @@ import com.solvd.airportpackage.model.constant.PlaneSize;
 import com.solvd.airportpackage.model.exception.IncorrectKilometersException;
 import com.solvd.airportpackage.model.exception.NotANumberException;
 import com.solvd.airportpackage.model.exception.PassengerNotFoundException;
+import com.solvd.airportpackage.model.generic.CompareObjectField;
+import com.solvd.airportpackage.model.generic.PrintDataGeneric;
 import com.solvd.airportpackage.model.generic.PrintObjectToString;
-import com.solvd.airportpackage.model.interface1.*;
+import com.solvd.airportpackage.model.interface1.Discounter;
+import com.solvd.airportpackage.model.interface1.IFly;
+import com.solvd.airportpackage.model.interface1.ITicketable;
 import com.solvd.airportpackage.model.person.FlightAttendant;
 import com.solvd.airportpackage.model.person.Passenger;
 import com.solvd.airportpackage.model.person.SalesPerson;
@@ -56,6 +60,9 @@ public class Airport {
         Destination destination = new Destination("Belarus", true, 10, "Europe", 12807);
         Flight flight1 = new Flight("AR1", destination, "22:15-3/16/22");
 
+        //IChoose interface usage.
+        passenger1.chooseDestination();
+
         Scanner sccity = new Scanner(System.in);
         LOGGER.info("Enter the name of the city you want to travel.");
         destination.setName(sccity.nextLine());
@@ -72,7 +79,7 @@ public class Airport {
         int planeCol;
         planeCol = scplanecolour.nextInt();
 
-        switch (planeCol){
+        switch (planeCol) {
             case 1:
                 LOGGER.info("You selected blue!");
                 plane1.setColor(PlaneColors.BLUE);
@@ -108,7 +115,7 @@ public class Airport {
         LOGGER.info(ticket1.getOwner());
 
 
-        SalesPerson salesMan1 = new SalesPerson(18, "Male", random.nextInt(4000000), "Juan Adalberto", random.nextInt(1000), 50, "Aerolineas Argentinas",random.nextInt());
+        SalesPerson salesMan1 = new SalesPerson(18, "Male", random.nextInt(4000000), "Juan Adalberto", random.nextInt(1000), 50, "Aerolineas Argentinas", random.nextInt());
         //SalesPerson class implements ISell, to sell you a random ticket id, that it will store in the buyerId
         salesMan1.sell(random.nextInt(4000));
         LOGGER.info(salesMan1.getAirline());
@@ -116,13 +123,34 @@ public class Airport {
         salesMan1.seller();
         LOGGER.info("Here is your ticket!");
 
+        LOGGER.info("Here is the list of the available procedures. \n 1. Passenger Data Comparer \n 2. Passenger data consultant \n 3. Message printer \n Please select a number between 1-3:");
 
 
-        FlightAttendant flightAttendant1 = new FlightAttendant(28,"Male",666,"Manuelito",2555,5,true, new String[]{"ESPANOL,INGLES"});
+        Scanner scmenuselector = new Scanner(System.in);
+
+        switch (scmenuselector.nextInt()) {
+            case 1:
+                CompareObjectField comparer = new CompareObjectField();
+                comparer.compareField(passenger1, passenger2, "name");
+                break;
+            case 2:
+                PrintObjectToString printer1 = new PrintObjectToString();
+                printer1.print(plane1.toString());
+                break;
+            case 3:
+                PrintDataGeneric messagePrinter = new PrintDataGeneric();
+                messagePrinter.setData("Welcome onboard Argentinian Airlines, hope you have a good flight!");
+                messagePrinter.ShowElement();
+                break;
+            default:
+                LOGGER.info("Please a enter valid option, you entered: " + scmenuselector.nextInt());
+        }
+        FlightAttendant flightAttendant1 = new FlightAttendant(28, "Male", 666, "Manuelito", 2555, 5, true, new String[]{"ESPANOL,INGLES"});
         PrintObjectToString printer = new PrintObjectToString();
         printer.print(flightAttendant1.toString());
+        //IAttend interface usage
         flightAttendant1.attend();
-
+        //IAttend interface usage
         LOGGER.info("Price of your flight:");
         try {
             LOGGER.info(ticket1.getTicketPrice() + " USD");
@@ -137,7 +165,26 @@ public class Airport {
             LOGGER.info(e);
         }
 
-        IFly flyable = () ->{
+        LOGGER.info("Hi im " + salesMan1.getName() + " The price of your ticket is: " + ticket1.getTicketPrice() + "\n If you pay in cash you have a 10% discount on your ticket price. \n Which payment method you wanna use? \n 1. Credit card \n 2. Cash");
+        Scanner paymentMethod = new Scanner(System.in);
+
+        switch (paymentMethod.nextInt()) {
+            case 1:
+                passenger1.pay();
+                LOGGER.info("The transaction was successfully, enjoy your flight!");
+                break;
+            case 2:
+                Discounter discounter = (ticketprice, discount) -> {
+                    LOGGER.info("The total by paying in cash is: " + "\n" + (ticketprice * (100 - discount) / 100));
+                };
+                discounter.discount(ticket1.getTicketPrice(), 10);
+                passenger1.pay();
+                LOGGER.info("The transaction was successfully, enjoy your flight!");
+                break;
+            default:
+                LOGGER.info("Please a enter valid option, you entered: " + paymentMethod.nextInt());
+        }
+        IFly flyable = () -> {
             LOGGER.info("Plane take off starting...");
             plane1.toString();
         };
